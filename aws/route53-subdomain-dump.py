@@ -27,7 +27,8 @@ def main(aws_profiles):
         hosted_zones = get_hosted_zone_ids(client, profile)
         resource_records = get_resource_records(hosted_zones, client, profile)
         subdomains = get_subdomains(resource_records, subdomains, profile)
-    subdomains = set(subdomains) # remove duplicate subdomains
+    subdomains = set(subdomains) # remove duplicate subdomain
+
     for subdomain in subdomains:
         print(subdomain)
 
